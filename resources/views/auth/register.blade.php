@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'class' => 'register-page',
-    'backgroundImagePath' => 'img/bg/jan-sendereks.jpg'
+    'backgroundImagePath' => 'img/bg/jan-sendereks.jpg',
 ])
 
 @section('content')
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="card-body ">
-                            <form class="form" method="POST" action="{{ route('register') }}">
+                            <form class="form" method="POST" action="{{ route('register.perform') }}">
                                 @csrf
                                 <div class="input-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <div class="input-group-prepend">
@@ -68,7 +68,8 @@
                                             <i class="nc-icon nc-single-02"></i>
                                         </span>
                                     </div>
-                                    <input name="name" type="text" class="form-control" placeholder="Name" value="{{ old('name') }}" required autofocus>
+                                    <input name="name" type="text" class="form-control" placeholder="Name"
+                                        value="{{ old('name') }}" required autofocus>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>
@@ -81,7 +82,8 @@
                                             <i class="nc-icon nc-email-85"></i>
                                         </span>
                                     </div>
-                                    <input name="email" type="email" class="form-control" placeholder="Email" required value="{{ old('email') }}">
+                                    <input name="email" type="email" class="form-control" placeholder="Email" required
+                                        value="{{ old('email') }}">
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -94,7 +96,8 @@
                                             <i class="nc-icon nc-key-25"></i>
                                         </span>
                                     </div>
-                                    <input name="password" type="password" class="form-control" placeholder="Password" required>
+                                    <input name="password" type="password" class="form-control" placeholder="Password"
+                                        required>
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
@@ -107,7 +110,8 @@
                                             <i class="nc-icon nc-key-25"></i>
                                         </span>
                                     </div>
-                                    <input name="password_confirmation" type="password" class="form-control" placeholder="Password confirmation" required>
+                                    <input name="password_confirmation" type="password" class="form-control"
+                                        placeholder="Password confirmation" required>
                                     @if ($errors->has('password_confirmation'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -118,7 +122,7 @@
                                     <label class="form-check-label">
                                         <input class="form-check-input" name="agree_terms_and_conditions" type="checkbox">
                                         <span class="form-check-sign"></span>
-                                            {{ __('I agree to the') }}
+                                        {{ __('I agree to the') }}
                                         <a href="#something">{{ __('terms and conditions') }}</a>.
                                     </label>
                                     @if ($errors->has('agree_terms_and_conditions'))
@@ -134,9 +138,9 @@
                         </div>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
-     </div> 
+    </div>
 @endsection
 
 @push('scripts')
